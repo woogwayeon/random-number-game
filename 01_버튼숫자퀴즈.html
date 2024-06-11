@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+	@font-face{
+font-family:'DNFBitBitv2';
+font-style:normal;font-weight:400;src:url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')format('opentype')}
+
+	.inner{ width: 80%; margin: 0 auto;
+			text-align: center; }
+	button{ width: 600px; height: 80px;
+			background: skyblue; border: none;
+			border-radius:15px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+			color: #fff;
+			font-family:'DNFBitBitv2';
+			font-size: 55px;
+			text-align: center;
+			margin: 0 auto;
+			margin-top: 200px; }
+</style>
+<title>랜덤숫자게임</title>
+
+<div class="inner">
+<button onclick="quizFn();">OPEN GAME</button>
+</div>
+
+
+<script>
+
+function quizFn() { 
+
+
+    let upDown = Math.ceil(Math.random() * 5);
+
+    console.log(upDown);
+
+    let quiz = prompt('몇이 나올까요', '1-5 사이의 숫자만 입력하세요');
+
+    if (quiz == upDown) {
+        alert(`정답입니다`);
+        agreeGame();
+    } else {
+        failGame();
+    }
+
+}
+
+
+
+function agreeGame() {
+    if (confirm("한번 더 하실래요?")) {
+        quizFn();
+    } else {
+        alert("즐거웠어요 안녕히 가세용");
+    }
+}
+
+function failGame() {
+    if (confirm(`틀렸습니다ㅎㅎ 다시 하실래요?`)) {
+        quizFn();
+    } else {
+        alert(`안타깝네요.. 또 만납시다 ㅂㅂ2`);
+    }
+}
+
+function noValue(){
+    
+}
+
+
+
+//quizFn(); // 게임 시작
+
+
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+
+
+
